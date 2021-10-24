@@ -3,6 +3,6 @@
         <p>{{ $business->name }}</p>
         <hr class="my-2">
         {{-- {{dd($business)}} --}}
-        <p class="text-gray-400">{{ strtolower($business->MainCategory->name) }}</p>
+        <p class="text-gray-400 text-sm"><x-category-icon :id="$business->main_category_id"/> {{ strtolower($business->MainCategory->name) }}</p>
     </div>
 </a>

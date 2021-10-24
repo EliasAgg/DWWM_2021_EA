@@ -11,12 +11,13 @@
                 <table class="w-full">
                     <thead>
                         <tr
-                            class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                            class="text-md font-semibold text-white text-left  bg-gray-600 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Lettre</th>
                             <th class="px-4 py-3">Nom</th>
                             <th class="px-4 py-3">Contact</th>
                             <th class="px-4 py-3">Téléphone</th>
                             <th class="px-4 py-3">Catégorie</th>
+                            <th class="px-4 py-3">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white">
@@ -38,13 +39,24 @@
                                 </td>
                                 <td class="px-4 py-3 text-sm border">{{ $business->phone }}</td>
                                 <td class="px-4 py-3 text-sm border">
-                                    <x-category-icon :id="$business->main_category_id"/>
-                                    {{ $business->MainCategory->name}}
+                                    <x-category-icon :id="$business->main_category_id" />
+                                    {{ $business->MainCategory->name }}
+                                </td>
+                                <td class="px-4 py-3 text-sm border">
+                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="far fa-edit"></i>
+
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                @if ($businesses instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator)
+                    <div class="my-3">
+
+                        {{ $businesses->links() }}
+                    </div>
+                @endif
             </div>
         </div>
     </section>

@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Business;
 use App\Models\MainCategory;
+use App\Models\SubCategory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -39,5 +40,10 @@ class DatabaseSeeder extends Seeder
         MainCategory::create(['name' => "Réparation"]);
         MainCategory::create(['name' => "Commerce"]);
         MainCategory::create(['name' => "Tout"]);
+
+        SubCategory::truncate();
+        SubCategory::create(['name' => 'Neuf']);
+        SubCategory::create(['name' => 'Occasion']);
+        SubCategory::create(['name' => 'Tout']);
     }
 }

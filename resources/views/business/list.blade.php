@@ -10,8 +10,8 @@
     <div class="flex flex-col justify-between">
         <div>
             @if ($businesses->count() > 0)
-                <div class="flex flex-col justify-around">
-                    <div class="flex flex-wrap justify-around">
+                <div class="flex flex-col justify-around mt-5">
+                    <div class="flex flex-wrap justify-start">
 
                         @foreach ($businesses as $business)
                             <x-business-small-card :business="$business" />
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             @else
-                <p class="text-center">Il n'y a aucun établissement dans la section {{ $glyph ?? 'principale' }}</p>
+                <p class="text-center mt-40 text-xl shadow-md mx-auto w-1/2 p-5 text-gray-300">Il n'y a aucun établissement dans la section {{ $glyph ?? 'principale' }}</p>
             @endif
         </div>
         <x-slot name="pagination">
