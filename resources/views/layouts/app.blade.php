@@ -34,7 +34,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="w-3/4 mx-auto ">
+            <main class="w-full sm:w-3/4 mx-auto ">
                 {{ $slot }}
             </main>
         </div>

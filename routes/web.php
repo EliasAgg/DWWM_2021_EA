@@ -37,6 +37,25 @@ Route::get('/single/{id}', [BusinessController::class, 'single'])
 ->middleware('auth')
 ->name('single');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])
+->middleware('auth')->middleware('admin')
+->name('admin');
+
+
+Route::view('/admin/business/create', 'admin.business.create-edit-form', ['action' => 'Ajouter un établissement'])
+->middleware('auth')->middleware('admin');
+
+Route::post('/admin/business/create')
+->middleware('auth')->middleware('admin');
+
+Route::get('/admin/business/edit/{id}')
+->middleware('auth')->middleware('admin');
+
+Route::post('/admin/business/edit/{id}')
+->middleware('auth')->middleware('admin');
+
+Route::get('/admin/business/{id}', [AdminController::class, 'single'])
+->middleware('auth')->middleware('admin')
+->name('admin_single');
 
 require __DIR__ . '/auth.php';
