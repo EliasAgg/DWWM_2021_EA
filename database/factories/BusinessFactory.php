@@ -22,7 +22,7 @@ class BusinessFactory extends Factory
      */
     public function definition()
     {
-        $name = ucwords($this->faker->word());
+        $name = ucwords($this->faker->company());
 
         return [
             'glyph' => mb_substr($name, 0, 1, 'utf-8'),

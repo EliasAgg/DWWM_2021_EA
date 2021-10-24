@@ -21,30 +21,27 @@
                     </thead>
                     <tbody class="bg-white">
                         @foreach ($businesses as $business)
-
-                        <tr class="text-gray-700">
-                            <td class="px-4 py-3 border">
-                                <div class="flex items-center text-sm">
-                                    <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                                        <img class="object-cover w-full h-full rounded-full"
-                                            src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                                            alt="" loading="lazy" />
+                            <tr class="text-gray-700">
+                                <td class="px-4 py-3 border">
+                                    <div class="flex items-center">
+                                        <div>
+                                            <p class="font-semibold text-lg text-white bg-gray-600 px-2 rounded-md">
+                                                {{ $business->glyph }}</p>
+                                            {{-- <p class="text-xs text-gray-600">Developer</p> --}}
+                                        </div>
                                     </div>
-                                    <div>
-                                        <p class="font-semibold text-black">Sufyan</p>
-                                        <p class="text-xs text-gray-600">Developer</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-4 py-3 text-ms font-semibold border">22</td>
-                            <td class="px-4 py-3 text-xs border">
-                                <span
-                                    class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm">
-                                    Acceptable </span>
-                            </td>
-                            <td class="px-4 py-3 text-sm border">6/4/2000</td>
-                            <td class="px-4 py-3 text-sm border">6/4/2000</td>
-                        </tr>
+                                </td>
+                                <td class="px-4 py-3 text-ms border">{{ $business->name }}</td>
+                                <td class="px-4 py-3 border">
+                                    <span class="px-2 py-1 rounded-sm">
+                                        {{ $business->contact }} </span>
+                                </td>
+                                <td class="px-4 py-3 text-sm border">{{ $business->phone }}</td>
+                                <td class="px-4 py-3 text-sm border">
+                                    <x-category-icon :id="$business->main_category_id"/>
+                                    {{ $business->MainCategory->name}}
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
