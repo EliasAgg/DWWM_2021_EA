@@ -5,5 +5,8 @@
         </h2>
     </x-slot>
 
-    <p>bonjour</p>
+    <p class="text-center mt-10">Bonjour, {{ Auth::user()->name }}.</p>
+    @if (Auth::user()->is_admin)
+    <p class="text-center mt-10">Vous êtes administrateur du système.</p>
+    @endif
 </x-app-layout>

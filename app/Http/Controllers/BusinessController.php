@@ -12,7 +12,8 @@ class BusinessController extends Controller
      *
      */
     public function listAll(){
-        $businesses = Business::with('MainCategory')->get();
+
+        $businesses = Business::with('MainCategory')->paginate(15);
 
         return view('business.list', [
             'businesses' => $businesses

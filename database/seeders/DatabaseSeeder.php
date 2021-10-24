@@ -22,6 +22,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Elias',
             'email' => 'elias.aggoune@elias-agg.com',
             'password' => bcrypt('!password'),
+            'is_admin' => true
+        ]);
+        User::create([
+            'name' => 'Nix',
+            'email' => 'nix@nix.com',
+            'password' => bcrypt('!password'),
+            'is_admin' => false
         ]);
 
         Business::truncate();

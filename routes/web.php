@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\BusinessController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BusinessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,7 @@ Route::get('/business/filter/{glyph}', [BusinessController::class, 'filteredList
 Route::get('/single/{id}', [BusinessController::class, 'single'])
 ->middleware('auth')
 ->name('single');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 require __DIR__ . '/auth.php';
