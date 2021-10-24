@@ -24,9 +24,11 @@
             @endif
         </div>
         <x-slot name="pagination">
-            <div class="w-2/3 mx-auto">
-            {{ $businesses->links() }}
-            </div>
+            @if ($businesses instanceof \Illuminate\Contracts\Pagination\LengthAwarePaginator)
+                <div class="w-2/3 mx-auto">
+                    {{ $businesses->links() }}
+                </div>
+            @endif
         </x-slot>
     </div>
 
