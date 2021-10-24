@@ -10,13 +10,7 @@
             <div class="flex flex-wrap justify-around">
 
                 @foreach ($businesses as $business)
-                    <a href="{{ route('single', $business->id) }}">
-                        <div class="m-4 w-52 p-3 shadow-md">
-                            <p>{{ $business->name }}</p>
-                            <hr class="my-2">
-                            <p>{{ $business->phone }}</p>
-                        </div>
-                    </a>
+                    <x-business-small-card :business="$business"/>
                 @endforeach
 
             </div>

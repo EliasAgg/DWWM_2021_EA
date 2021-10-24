@@ -24,7 +24,7 @@ class CreateBusinessesTable extends Migration
             $table->string('activity', 255);
             $table->string('description', 255);
             $table->string('link', 255);
-            $table->string('phone', 10);
+            $table->string('phone', 255);
             $table->string('contact', 255);
             $table->string('email', 255);
             $table->foreignIdFor(Address::class);

@@ -18,10 +18,19 @@ class DatabaseSeeder extends Seeder
     {
         User::truncate();
         User::factory(10)->create();
+        User::create([
+            'name' => 'Elias',
+            'email' => 'elias.aggoune@elias-agg.com',
+            'password' => bcrypt('!password'),
+        ]);
 
         Business::truncate();
         Business::factory(50)->create();
 
+        MainCategory::truncate();
         MainCategory::create(['name' => "Recyclage"]);
-    } 
+        MainCategory::create(['name' => "Réparation"]);
+        MainCategory::create(['name' => "Commerce"]);
+        MainCategory::create(['name' => "Tout"]);
+    }
 }

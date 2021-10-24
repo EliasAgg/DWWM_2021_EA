@@ -22,13 +22,15 @@ class BusinessFactory extends Factory
      */
     public function definition()
     {
+        $name = ucwords($this->faker->word());
+
         return [
-            'glyph' => Str::upper(($this->faker->randomLetter())),
-            'name' => $this->faker->word() . ' ' . $this->faker->word(),
+            'glyph' => mb_substr($name, 0, 1, 'utf-8'),
+            'name' => $name,
             'activity' => $this->faker->word(),
             'description' => $this->faker->text(),
             'link' => 'www.' . $this->faker->word() . '.com',
-            'phone' => '01' . random_int(10000000, 99999999),
+            'phone' => $this->faker->phoneNumber(),
             'contact' => $this->faker->name(),
             'email' => $this->faker->email(),
             'address_id' => random_int(1, 20),

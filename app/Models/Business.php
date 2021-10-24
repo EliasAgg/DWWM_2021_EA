@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\MainCategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Business extends Model
 {
@@ -11,7 +12,7 @@ class Business extends Model
 
     protected $fillable = [
         'glyph',
-        'name', 
+        'name',
         'activity',
         'description',
         'link',
@@ -28,4 +29,9 @@ class Business extends Model
         'main_category_id',
         'sub_category_id',
     ];
+
+    public function mainCategory()
+    {
+        return $this->belongsTo(MainCategory::class);
+    }
 }
