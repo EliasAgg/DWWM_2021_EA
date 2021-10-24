@@ -7,7 +7,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            {{ __('Mot de passe oublié ? Pas de problème, renseignez simplement votre adresse mail et nous vous enverrons un link qui vous permettra de choisir un nouveau mot de passe.') }}
         </div>
 
         <!-- Session Status -->
@@ -21,14 +21,17 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="email" :value="__('E-mail')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                    {{ __('Retour') }}
+                </a>
+                <x-button class="ml-4">
+                    {{ __('Envoyer le lien') }}
                 </x-button>
             </div>
         </form>

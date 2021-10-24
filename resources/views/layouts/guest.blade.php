@@ -16,18 +16,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <script src="https://kit.fontawesome.com/924ddcdbe2.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="flex flex-col justify-between h-screen">
-        @include('layouts.nav-dir')
         <div class="font-sans text-gray-900 antialiased w-2/3 mx-auto">
             {{ $slot }}
         </div>
-        <footer class="mx-auto text-center w-2/3">
-            <hr>
-            <p class="text-gray-400">MyCABP &copy; 2021</p>
-        </footer>
     </div>
 </body>
 

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\BusinessController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +14,26 @@ use App\Http\Controllers\ServiceController;
 |
 */
 
-Route::get('/', [BusinessController::class, 'listAll'])->name('home');
+Route::get('/', [BusinessController::class, 'listAll'])
+->middleware('auth')
+->name('home');
 
-Route::get('/business/{id}', [BusinessController::class, 'single'])->name('business_details');
+Route::get('/business/{id}', [BusinessController::class, 'single'])
+->middleware('auth')
+->name('business_details');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})
+->middleware(['auth'])
+->name('dashboard');
 
-Route::get('/business/filter/{glyph}', [BusinessController::class, 'filteredList'])->name('business_filter');
+Route::get('/business/filter/{glyph}', [BusinessController::class, 'filteredList'])
+->middleware('auth')
+->name('business_filter');
+
+Route::get('/single/{id}', [BusinessController::class, 'single'])
+->middleware('auth')
+->name('single');
 
 require __DIR__ . '/auth.php';

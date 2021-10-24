@@ -28,7 +28,7 @@ class BusinessFactory extends Factory
             'activity' => $this->faker->word(),
             'description' => $this->faker->text(),
             'link' => 'www.' . $this->faker->word() . '.com',
-            'phone' => random_int(1000000000, 9999999999),
+            'phone' => '01' . random_int(10000000, 99999999),
             'contact' => $this->faker->name(),
             'email' => $this->faker->email(),
             'address_id' => random_int(1, 20),

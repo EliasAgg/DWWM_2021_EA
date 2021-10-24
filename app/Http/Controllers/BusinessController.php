@@ -25,6 +25,7 @@ class BusinessController extends Controller
 
     public function filteredList($glyph){
         $filtered = Business::where('glyph', '=', $glyph)->get();
+
         return view('business.list', [
             'businesses' => $filtered,
             'glyph' => $glyph
