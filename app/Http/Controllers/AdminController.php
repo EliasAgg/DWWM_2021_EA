@@ -22,41 +22,56 @@ class AdminController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function editBusiness($id)
     {
         return view('admin.business.single');
     }
 
-    public function create(Request $request)
+    public function createBusiness(Request $request)
     {
-
+        $validated = $this->validatorBusiness($request->getAttributes());
+        Business::create([
+            'glyph' => $validated['glyph'],
+            'name' => $validated['name'],
+            'main_category_id' =>$validated['main_category_id'],
+            'sub_category_id' => $validated['sub_category_id'],
+            'activity' => $validated['activity'],
+            'description' => $validated['description'],
+            'link' => $validated['link'],
+            'address' => $validated['address'],
+            'phone' => $validated['phone'],
+            'contact' => $validated['contact'],
+            'schedule' => $validated['schedule'],
+            'email' => $validated['email'],
+            'address' => $validated['address'],
+            'zipcode' => $validated['zipcode'],
+            'city' => $validated['city']
+            ]
+        );
 
         return view('admin.business.single');
     }
 
-    public function validator(Request $request)
+    public function validatorBusiness(Request $request)
     {
         $validated = $request->validate([
-            'glyph' => ['required'],
-            'name' => ['required'],
-            'glyph',
-            'name',
-            'activity',
-            'description',
-            'link',
-            'address',
-            'phone',
-            'contact',
-            'hours',
-            'email',
-            'address',
-            'zipcode',
-            'city',
-            'address_id',
-            'schedule_id',
-            'main_category_id',
-            'sub_category_id',
-
+            'glyph' => ['required', 'bail', 'alpha'],
+            'name' => ['required', 'bail'],
+            'glyph' => ['required', 'bail'],
+            'name' => ['required', 'bail'],
+            'main_category_id' =>['required', 'bail'],
+            'sub_category_id' => ['required', 'bail'],
+            'activity' => ['nullable'],
+            'description' => ['nullable'],
+            'link' => ['starts_with:www.', 'nullable'],
+            'address' => ['nullable'],
+            'phone' => ['digits:10'],
+            'contact' => ['nullable'],
+            'schedule' => ['nullable'],
+            'email' => ['email', 'required_without:phone'],
+            'address' => ['nullable'],
+            'zipcode' => ['nullable', 'digits:5'],
+            'city' => ['nullable']
         ]);
 
         return $validated;

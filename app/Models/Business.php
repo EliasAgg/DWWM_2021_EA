@@ -24,8 +24,8 @@ class Business extends Model
         'address',
         'zipcode',
         'city',
-        'address_id',
-        'schedule_id',
+        'address',
+        'schedule',
         'main_category_id',
         'sub_category_id',
     ];
