@@ -40,6 +40,7 @@ class DatabaseSeeder extends Seeder
         MainCategory::create(['name' => "Réparation"]);
         MainCategory::create(['name' => "Commerce"]);
         MainCategory::create(['name' => "Tout"]);
+        // MainCategory::create(['name' => "Not Used"]);
 
         SubCategory::truncate();
         SubCategory::create(['name' => 'Neuf']);

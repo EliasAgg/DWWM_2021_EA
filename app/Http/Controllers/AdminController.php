@@ -10,6 +10,7 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.index', ['businesses' => Business::with('MainCategory')->orderBy('glyph')->paginate(10)]);
+
     }
 
     public function single($id)

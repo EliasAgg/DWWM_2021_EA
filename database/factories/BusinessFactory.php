@@ -36,6 +36,7 @@ class BusinessFactory extends Factory
             'address_id' => random_int(1, 20),
             'schedule_id' => random_int(1, 20),
             'main_category_id' => random_int(1, 4),
+            // 'main_category_id' => random_int(1, 5),
             'sub_category_id' => random_int(1, 4)
         ];
     }
