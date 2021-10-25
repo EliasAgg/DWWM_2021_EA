@@ -29,6 +29,8 @@ class CreateBusinessesTable extends Migration
             $table->string('email', 255);
             $table->string('address', 255);
             $table->string('schedule', 255);
+            $table->string('zipcode', 255);
+            $table->string('city', 255);
             // Future migration for table: extract adress and schedule into their own model
             // $table->foreignIdFor(Address::class);
             // $table->foreignIdFor(Schedule::class);

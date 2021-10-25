@@ -29,8 +29,8 @@ class AdminController extends Controller
 
     public function createBusiness(Request $request)
     {
-        $validated = $this->validatorBusiness($request->getAttributes());
-        Business::create([
+        $validated = $this->validatorBusiness($request);
+        $business = Business::create([
             'glyph' => $validated['glyph'],
             'name' => $validated['name'],
             'main_category_id' =>$validated['main_category_id'],
@@ -49,7 +49,7 @@ class AdminController extends Controller
             ]
         );
 
-        return view('admin.business.single');
+        return view('admin.business.single', ['business' => $business]);
     }
 
     public function validatorBusiness(Request $request)

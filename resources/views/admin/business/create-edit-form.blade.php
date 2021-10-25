@@ -15,21 +15,21 @@
                         <x-label for="first-name">
                             Lettre
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="glyph" />
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Nom
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="name" />
                     </div>
 
                     <div class="col-span-6 sm:col-span-1">
                         <x-label for="first-name">
                             Activité
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="activity"/>
                     </div>
 
                     <div class="col-span-6 sm:col-span-4">
@@ -43,47 +43,53 @@
                         <x-label for="first-name">
                             Lien
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="link" />
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Téléphone
                         </x-label>
-                        <x-input type="text" id="first-name" maxlength="5"/>
+                        <x-input type="text" id="first-name" maxlength="10" name="phone"/>
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Contact
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="contact" />
                     </div>
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Email
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="email" />
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Adresse
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="address"/>
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">
                         <x-label for="first-name">
                             Ville
                         </x-label>
-                        <x-input type="text" id="first-name" />
+                        <x-input type="text" id="first-name" name="city"/>
                     </div>
 
                     <div class="col-span-6 sm:col-span-1">
                         <x-label for="first-name">
                             Code Postal
                         </x-label>
-                        <x-input type="text" id="first-name" maxlength="5"/>
+                        <x-input type="text" id="first-name" maxlength="5" name="zipcode"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-1">
+                        <x-label for="first-name">
+                            Horaires
+                        </x-label>
+                        <x-input type="text" id="first-name" maxlength="5" name="schedule"/>
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">

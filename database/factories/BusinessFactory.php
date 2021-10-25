@@ -36,6 +36,8 @@ class BusinessFactory extends Factory
             'address' => $this->faker->address(),
             'schedule' => $this->faker->time('h:m') . ' ' . $this->faker->time('h:m'),
             'main_category_id' => random_int(1, 4),
+            'zipcode' => random_int(10000, 99999),
+            'city' => $this->faker->city(),
             // 'main_category_id' => random_int(1, 5),
             'sub_category_id' => random_int(1, 4)
         ];

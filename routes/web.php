@@ -44,7 +44,7 @@ Route::get('/admin', [AdminController::class, 'index'])
 Route::view('/admin/business/create', 'admin.business.create-edit-form', ['action' => 'Ajouter un établissement'])
 ->middleware('auth')->middleware('admin');
 
-Route::post('/admin/business/create')
+Route::post('/admin/business/create', [AdminController::class, 'createBusiness'])
 ->middleware('auth')->middleware('admin');
 
 Route::get('/admin/business/edit/{id}')
