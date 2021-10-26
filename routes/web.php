@@ -57,4 +57,7 @@ Route::get('/admin/business/{id}', [AdminController::class, 'single'])
 ->middleware('auth')->middleware('admin')
 ->name('admin_single');
 
+Route::get('/admin/business/destroy/{id}', [AdminController::class, 'destroyBusiness'])
+->middleware('auth')->middleware('admin');
+
 require __DIR__ . '/auth.php';

@@ -7,7 +7,7 @@
 
     <form action="#" method="POST" class="w-2/3 mx-auto mt-10">
         @csrf
-        <div class="shadow overflow-hidden sm:rounded-md">
+        <div class="shadow-lg overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
                 <div class="grid grid-cols-4 gap-6">
 

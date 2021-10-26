@@ -45,6 +45,6 @@ class DatabaseSeeder extends Seeder
         SubCategory::truncate();
         SubCategory::create(['name' => 'Neuf']);
         SubCategory::create(['name' => 'Occasion']);
-        SubCategory::create(['name' => 'Tout']);
+        SubCategory::create(['name' => 'Neuf & Occasion']);
     }
 }

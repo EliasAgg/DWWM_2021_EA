@@ -39,7 +39,7 @@ class BusinessController extends Controller
      *
      */
     public function filteredList($glyph){
-        $filtered = Business::where('glyph', '=', $glyph)->get();
+        $filtered = Business::where('glyph', '=', $glyph)->paginate(15);
 
         return view('business.list', [
             'businesses' => $filtered,

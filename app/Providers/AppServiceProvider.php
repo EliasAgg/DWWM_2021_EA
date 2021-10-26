@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Import helpers file resources/helpers/business_helpers.php
+        require_once resource_path("helpers/business_helpers.php");
     }
 }

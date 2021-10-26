@@ -45,7 +45,8 @@
                                 <td class="px-4 py-3 text-sm border">
                                     <div class="flex justify-between sm:justify-around">
                                         <i class="far fa-edit text-yellow-500 text-2xl sm:text-base"></i>
-                                        <i class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i>
+                                        <a href="/admin/business/destroy/{{ $business->id }}"><i
+                                                class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i></a>
                                         <a href="/admin/business/{{ $business->id }}">
                                             <i class="fas fa-eye text-blue-400 text-2xl sm:text-base"></i>
                                         </a>

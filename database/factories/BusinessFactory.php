@@ -30,7 +30,7 @@ class BusinessFactory extends Factory
             'activity' => $this->faker->word(),
             'description' => $this->faker->text(),
             'link' => 'www.' . $this->faker->word() . '.com',
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => random_int(1000000000, 9999999999),
             'contact' => $this->faker->name(),
             'email' => $this->faker->email(),
             'address' => $this->faker->address(),
@@ -39,7 +39,7 @@ class BusinessFactory extends Factory
             'zipcode' => random_int(10000, 99999),
             'city' => $this->faker->city(),
             // 'main_category_id' => random_int(1, 5),
-            'sub_category_id' => random_int(1, 4)
+            'sub_category_id' => random_int(1, 3)
         ];
     }
 }

@@ -34,4 +34,9 @@ class Business extends Model
     {
         return $this->belongsTo(MainCategory::class);
     }
+
+    public function subCategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
 }
