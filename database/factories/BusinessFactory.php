@@ -33,7 +33,7 @@ class BusinessFactory extends Factory
             'phone' => random_int(1000000000, 9999999999),
             'contact' => $this->faker->name(),
             'email' => $this->faker->email(),
-            'address' => $this->faker->address(),
+            'address' => $this->faker->streetAddress(),
             'schedule' => $this->faker->time('h:m') . ' ' . $this->faker->time('h:m'),
             'main_category_id' => random_int(1, 4),
             'zipcode' => random_int(10000, 99999),

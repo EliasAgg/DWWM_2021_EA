@@ -3,7 +3,7 @@
     'activeglyph'
 ])
 
-<ul class="sm:justify-around my-4 flex flex-wrap justify-start ">
+<ul class="sm:justify-between my-4 flex flex-wrap justify-evenly ">
     @foreach ($alpha as $glyph)
         <li>
             <x-nav-link class="sm:text-base text-3xl m-5 sm:m-0" :href="route('business_filter', $glyph)" :active="$glyph == $activeglyph">{{ $glyph }}</x-nav-link>

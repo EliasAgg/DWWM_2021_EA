@@ -12,10 +12,13 @@
                 <div class="grid grid-cols-4 gap-6">
 
                     <div class="col-span-6 sm:col-span-1">
-                        <x-label for="first-name">
+                        <x-label for="glyph">
                             Lettre
                         </x-label>
-                        <x-input type="text" id="first-name" name="glyph" />
+                        <x-input type="text" id="glyph" name="glyph" maxlength='1' />
+                        @error('glyph')
+                            <p class="bg-red-100 text-red-500 m-1 p-1">{{ $message }}</p>
+                        @enderror
                     </div>
 
                     <div class="col-span-6 sm:col-span-2">

@@ -7,7 +7,7 @@
 
     <section class="container mx-auto mt-6 sm:mt-0 sm:p-6 font-mono">
         <div class="w-full mb-8 overflow-hidden sm:rounded-lg shadow-lg">
-            <div class="w-full overflow-x-auto">
+            <div class="w-full ">
                 <table class="w-full">
                     <thead>
                         <tr
