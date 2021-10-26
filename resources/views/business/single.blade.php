@@ -28,9 +28,9 @@
                                 </div>
                             </div> --}}
                             <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                                <div class="py-6 px-3 mt-32 sm:mt-0">
+                                <div class="py-5 px-3 sm:mt-0">
                                     <button
-                                        class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                                        class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-lg hover:bg-pink-400 shadow-md text-xs px-4 py-1 rounded outline-none focus:outline-none mb-1 ease-linear transition-all duration-150"
                                         type="button">
                                         <i class="fas fa-heart text-lg"></i>
                                     </button>
@@ -61,7 +61,8 @@
                                 <a href="https://{{ $business->link }}">{{ $business->link }}</a>
                             </div>
                             <div class="mb-2 text-blueGray-600 mt-10">
-                                <x-category-icon :id="$business->main_category_id" />{{ $business->MainCategory->name }}
+                                <x-category-icon :id="$business->main_category_id" />
+                                {{ $business->MainCategory->name }}
                             </div>
                             <div class="mb-2 text-blueGray-600">
                                 <x-sub-category-icon :id="$business->sub_category_id" />
@@ -77,6 +78,14 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="gmap_canvas ">
+                            <iframe class="gmap_canvas w-full mb-3 h-96"
+                                src="https://maps.google.com/maps?q={{$business->name}}=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                            </iframe>
+                        </div>
+
                     </div>
                 </div>
             </div>
