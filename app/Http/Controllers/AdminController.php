@@ -21,18 +21,13 @@ class AdminController extends Controller
         ]);
     }
 
-    public function editBusiness($id)
-    {
-        return view('admin.business.single');
-    }
-
     public function createBusiness(Request $request)
     {
         $validated = $this->validatorBusiness($request);
 
         $business = Business::create(
             [
-                'glyph' => $validated['glyph'],
+                'glyph' => ucwords($validated['glyph']),
                 'name' => $validated['name'],
                 'main_category_id' => $validated['main_category_id'],
                 'sub_category_id' => $validated['sub_category_id'],
@@ -50,7 +45,11 @@ class AdminController extends Controller
             ]
         );
 
-        return view('admin.business.single', ['business' => $business]);
+        return view('admin.business.single', [
+            'business' => $business,
+            'success' => true,
+            'message' => 'Ajout de ' . $business->name . ' réussie !'
+        ]);
     }
 
     public function validatorBusiness(Request $request)
@@ -82,6 +81,30 @@ class AdminController extends Controller
     {
         Business::destroy($id);
 
-        return redirect(url()->previous());
+        return redirect('/admin');
+    }
+
+    public function showEditForm($id){
+        $business = Business::findOrFail($id);
+
+        return view('admin.business.create-edit-form', [
+            'business' => $business,
+            'action' => 'Modifier l\'établissement ' . $business->name,
+            'edit' => true
+        ]);
+    }
+
+    public function editBusiness(Request $request, $id){
+        $business = Business::findOrFail($id);
+
+        $validated = $this->validatorBusiness($request);
+
+        $business->update($validated);
+
+        return view('admin.business.single', [
+            'business' => $business,
+            'success' => true,
+            'message' => 'Modification de ' . $business->name . ' réussie !'
+        ]);
     }
 }

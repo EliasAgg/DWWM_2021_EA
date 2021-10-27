@@ -16,11 +16,11 @@
                             <div class="flex lg:flex-row flex-col justify-around w-1/3 self-center">
                                 <div class="text-blueGray-600">
                                     <x-category-icon :id="$business->main_category_id" />
-                                    {{ $business->MainCategory->name }}
+                                    <span class="text-xs sm:text-base">{{ $business->MainCategory->name }}</span>
                                 </div>
                                 <div class="text-blueGray-600">
                                     <x-sub-category-icon :id="$business->sub_category_id" />
-                                    {{ $business->SubCategory->name }}
+                                    <span class="text-xs sm:text-base">{{ $business->SubCategory->name }}</span>
                                 </div>
                             </div>
                             <div class="w-full lg:w-4/12 px-4 lg:order-3 text-right lg:self-center self-end">

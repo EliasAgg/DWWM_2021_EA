@@ -14,7 +14,7 @@
                             class="text-md font-semibold text-white text-left  bg-gray-600 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Lettre</th>
                             <th class="px-4 py-3">Nom</th>
-                            <th class="px-4 py-3  hidden sm:table-cell">Contact</th>
+                            <th class="px-4 py-3  hidden sm:table-cell">Ville</th>
                             <th class="px-4 py-3  hidden sm:table-cell">Téléphone</th>
                             <th class="px-4 py-3  hidden sm:table-cell">Catégorie</th>
                             <th class="px-4 py-3">Actions</th>
@@ -35,7 +35,7 @@
                                 <td class="px-4 py-3 text-ms border">{{ $business->name }}</td>
                                 <td class="px-4 py-3 border  hidden sm:table-cell">
                                     <span class="px-2 py-1 rounded-sm ">
-                                        {{ $business->contact }} </span>
+                                        {{ $business->city }} </span>
                                 </td>
                                 <td class="px-4 py-3 text-sm border  hidden sm:table-cell">{{ $business->phone }}</td>
                                 <td class="px-4 py-3 text-sm border  hidden sm:table-cell">
@@ -44,9 +44,11 @@
                                 </td>
                                 <td class="px-4 py-3 text-sm border">
                                     <div class="flex justify-between sm:justify-around">
-                                        <i class="far fa-edit text-yellow-500 text-2xl sm:text-base"></i>
-                                        <a href="/admin/business/destroy/{{ $business->id }}"><i
-                                                class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i></a>
+                                        <a href="/admin/business/edit/{{ $business->id }}">
+                                            <i class="far fa-edit text-yellow-500 text-2xl sm:text-base"></i>
+                                        </a>
+                                        {{-- <a href="/admin/business/destroy/{{ $business->id }}"><i
+                                                class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i></a> --}}
                                         <a href="/admin/business/{{ $business->id }}">
                                             <i class="fas fa-eye text-blue-400 text-2xl sm:text-base"></i>
                                         </a>

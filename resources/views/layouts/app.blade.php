@@ -19,6 +19,7 @@
 
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/924ddcdbe2.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/a9cf051cf6.js" crossorigin="anonymous"></script> --}}
 </head>
 
 <body class="font-sans antialiased">
