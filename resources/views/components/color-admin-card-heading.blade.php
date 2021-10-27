@@ -9,6 +9,6 @@
         <div class="h-5 rounded-t-lg" style="background-color:rgb(233, 96, 17);"></div>
     @break
     @case(4)
-        <div class="h-5 rounded-t-lg" style="background-color: rgb(17, 165, 233);"></div>
+        <div class="h-5 rounded-t-lg" style="background-color:rgb(17, 165, 233);"></div>
     @break
 @endswitch

@@ -9,7 +9,7 @@
     <main>
         <section class="py-16">
             <div class="container mx-auto px-4 rounded-lg">
-                <x-color-card-heading :id="$business->MainCategory->id"/>
+                <x-color-card-heading :id="$business->MainCategory->id" />
                 <div class="flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg ">
                     <div class="px-6">
                         <div class="flex justify-between">
