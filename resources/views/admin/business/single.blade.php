@@ -73,7 +73,7 @@
                     class="bg font-bold text-sm text-yellow-500 w-full text-center py-3 hover:bg-yellow-500 hover:text-white hover:shadow-lg rounded-bl-lg">Modifier</a>
                 <div x-data="{ open: false }" @click="open = true"
                     class="cursor-pointer bg font-bold text-sm text-red-400 w-full text-center py-3 hover:bg-red-400 hover:text-white hover:shadow-lg rounded-br-lg">
-                    <span class="bg-red-300 w-full">Supprimer</span>
+                    Supprimer
                     <div role="dialog" aria-labelledby="modal1_label" aria-modal="true" tabindex="0" x-show="open"
                         @click="open = false"
                         class="fixed top-0 left-0 w-full h-screen flex justify-center items-center">

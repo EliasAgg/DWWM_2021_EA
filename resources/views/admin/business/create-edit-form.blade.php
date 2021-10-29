@@ -115,7 +115,7 @@
                             <option value="" {{Route::is('createBusiness') ? "selected" : ""}}>--Sélectionner une sous catégorie</option>
                             <option value="1" {{($business->sub_category_id ?? 0) == 1 ? 'selected' : ''}}>Neuf</option>
                             <option value="2" {{($business->sub_category_id ?? 0) == 2 ? 'selected' : ''}}>Occasion</option>
-                            <option value="4" {{($business->sub_category_id ?? 0) == 3 ? 'selected' : ''}}>Tout</option>
+                            <option value="3" {{($business->sub_category_id ?? 0) == 3 ? 'selected' : ''}}>Tout</option>
                         </select>
                     </div>
                 </div>
