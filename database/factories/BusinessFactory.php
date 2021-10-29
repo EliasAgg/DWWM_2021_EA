@@ -38,7 +38,6 @@ class BusinessFactory extends Factory
             'main_category_id' => random_int(1, 4),
             'zipcode' => random_int(10000, 99999),
             'city' => $this->faker->city(),
-            // 'main_category_id' => random_int(1, 5),
             'sub_category_id' => random_int(1, 3)
         ];
     }

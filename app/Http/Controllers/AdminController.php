@@ -84,7 +84,8 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function showEditForm($id){
+    public function showEditForm($id)
+    {
         $business = Business::findOrFail($id);
 
         return view('admin.business.create-edit-form', [
@@ -94,7 +95,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function editBusiness(Request $request, $id){
+    public function editBusiness(Request $request, $id)
+    {
         $business = Business::findOrFail($id);
 
         $validated = $this->validatorBusiness($request);
