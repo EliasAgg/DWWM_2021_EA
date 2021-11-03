@@ -9,7 +9,7 @@ class BusinessController extends Controller
 {
     /**
      * Lists all businesses from database
-     *
+     * View: business/list
      */
     public function listAll(){
         $businesses = Business::with('MainCategory')->paginate(15);
@@ -23,7 +23,7 @@ class BusinessController extends Controller
 
     /**
      * Get one business from the specified id
-     *
+     * View: business/single
      */
     public function single($id){
         $business = Business::findOrFail($id);
@@ -35,7 +35,7 @@ class BusinessController extends Controller
 
     /**
      * Lists all businesses which matches the selected letter (glyph)
-     *
+     * View: business/list
      */
     public function filteredList($glyph){
         $filtered = Business::where('glyph', '=', $glyph)->paginate(15);

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class XSSPrevention
 {
     /**
-     * Handle an incoming request.
+     * Sanitize user input request to prevent XSS attacks
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next

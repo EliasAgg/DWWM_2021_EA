@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * Returns the main view of the admin panel
+     * View: admin/index
+     */
     public function index()
     {
         return view('admin.index', ['businesses' => Business::with('MainCategory')->orderBy('glyph')->paginate(10)]);
     }
 
+    /**
+     * Returns the details of a single business item
+     * View: admin/business/single
+     */
     public function single($id)
     {
         $business = Business::findOrFail($id);
@@ -21,6 +29,10 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * Create a new business in DB, and returns details view with success message
+     * View: admin/business/single
+     */
     public function createBusiness(Request $request)
     {
         $validated = $this->validatorBusiness($request);
@@ -52,7 +64,11 @@ class AdminController extends Controller
         ]);
     }
 
-    public function validatorBusiness(Request $request)
+    /**
+     * Validates administrator input from the request, for the Business model
+     * returns array $validated
+     */
+    public function validatorBusiness(Request $request): array
     {
         $validated = $request->validate([
             'glyph' => ['required', 'bail', 'alpha'],
@@ -77,6 +93,11 @@ class AdminController extends Controller
         return $validated;
     }
 
+    /**
+     * Deletes a business instance from its id
+     * View: admin/index (redirect)
+     * TODO -> Attach success or error message to the redirect request
+     */
     public function destroyBusiness($id)
     {
         Business::destroy($id);
@@ -84,6 +105,10 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
+    /**
+     * Returns the business form for editing or adding
+     * View: admin/business/create-edit-form
+     */
     public function showEditForm($id)
     {
         $business = Business::findOrFail($id);
@@ -95,6 +120,10 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * Edit a business instance from user input request
+     * View: admin/business/single
+     */
     public function editBusiness(Request $request, $id)
     {
         $business = Business::findOrFail($id);
