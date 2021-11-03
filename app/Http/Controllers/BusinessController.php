@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BusinessController extends Controller
 {
-    /**
+    /**+
      * Lists all businesses from database
      * View: business/list
      */

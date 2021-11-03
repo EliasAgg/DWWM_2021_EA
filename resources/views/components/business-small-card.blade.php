@@ -1,4 +1,4 @@
-<a href="{{ route('single', $business->id) }}">
+<a href="{{ route('business_details', $business->id) }}">
     <div class="m-4 sm:w-52 w-72 p-3 shadow text-center transition hover:shadow-lg duration-200 ease-in-out">
         <p>{{ strlen($business->name) > 15 ? substr($business->name, 0, 15) . '...' : $business->name }}</p>
         <hr class="my-2">
