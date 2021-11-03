@@ -6,7 +6,7 @@
     </x-slot>
 
     <section class="container mx-auto mt-6 sm:mt-0 sm:p-6 font-mono">
-        <div class="w-full mb-8 overflow-hidden sm:rounded-lg shadow-lg">
+        <div class="w-full mb-8 xl:overflow-hidden overflow-auto sm:rounded-lg shadow-lg">
             <div class="w-full ">
                 <table class="w-full">
                     <thead>
@@ -14,9 +14,9 @@
                             class="text-md font-semibold text-white text-left  bg-gray-600 uppercase border-b border-gray-600">
                             <th class="px-4 py-3">Lettre</th>
                             <th class="px-4 py-3">Nom</th>
-                            <th class="px-4 py-3  hidden sm:table-cell">Ville</th>
-                            <th class="px-4 py-3  hidden sm:table-cell">Téléphone</th>
-                            <th class="px-4 py-3  hidden sm:table-cell">Catégorie</th>
+                            <th class="px-4 py-3  hidden lg:table-cell">Ville</th>
+                            <th class="px-4 py-3  hidden lg:table-cell">Téléphone</th>
+                            <th class="px-4 py-3  hidden lg:table-cell">Catégorie</th>
                             <th class="px-4 py-3">Actions</th>
                         </tr>
                     </thead>
@@ -33,12 +33,12 @@
                                     </div>
                                 </td>
                                 <td class="px-4 py-3 text-ms border">{{ $business->name }}</td>
-                                <td class="px-4 py-3 border  hidden sm:table-cell">
+                                <td class="px-4 py-3 border  hidden lg:table-cell">
                                     <span class="px-2 py-1 rounded-sm ">
                                         {{ $business->city }} </span>
                                 </td>
-                                <td class="px-4 py-3 text-sm border  hidden sm:table-cell">{{ $business->phone }}</td>
-                                <td class="px-4 py-3 text-sm border  hidden sm:table-cell">
+                                <td class="px-4 py-3 text-sm border  hidden lg:table-cell">{{ $business->phone }}</td>
+                                <td class="px-4 py-3 text-sm border  hidden lg:table-cell">
                                     <x-category-icon :id="$business->main_category_id" />
                                     {{ $business->MainCategory->name }}
                                 </td>
