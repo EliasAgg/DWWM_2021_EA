@@ -23,6 +23,7 @@ class XSSPrevention
         });
 
         $request->merge($userInputs);
+
         return $next($request);
     }
 }
