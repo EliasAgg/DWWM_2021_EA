@@ -13,8 +13,9 @@ class BusinessController extends Controller
      */
     public function listAll(){
         $businesses = Business::with('MainCategory')->paginate(15);
-        // Following line not good due to N+1 problem https://medium.com/swlh/solving-n-1-query-without-creating-memory-issue-in-laravel-d02d77c5fccc
+        // Following line not appropriate due to N+1 problem https://medium.com/swlh/solving-n-1-query-without-creating-memory-issue-in-laravel-d02d77c5fccc
         // $businesses = Business::all();
+        // $businesses = Business::with('MainCategory')->get();
 
         return view('business.list', [
             'businesses' => $businesses
