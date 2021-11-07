@@ -16,24 +16,20 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        User::truncate();
-        User::factory(10)->create();
+    {   
+        User::create([
+            'name' => 'Arni',
+            'email' => 'arnimaconseil@free.fr',
+            'password' => bcrypt('cabpmy2021@zWEIK'),
+            'is_admin' => true
+        ]);
+
         User::create([
             'name' => 'Elias',
             'email' => 'elias.aggoune@elias-agg.com',
-            'password' => bcrypt('!password'),
+            'password' => bcrypt(']sUvx0Mw'),
             'is_admin' => true
         ]);
-        User::create([
-            'name' => 'Utilisateur',
-            'email' => 'user@user.com',
-            'password' => bcrypt('!password'),
-            'is_admin' => false
-        ]);
-
-        Business::truncate();
-        Business::factory(50)->create();
 
         MainCategory::truncate();
         MainCategory::create(['name' => "Recyclage"]);
