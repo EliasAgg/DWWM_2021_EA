@@ -25,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
     {
         // Import helpers file resources/helpers/business_helpers.php
         require_once resource_path("helpers/business_helpers.php");
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 }
