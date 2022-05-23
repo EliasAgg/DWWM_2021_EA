@@ -59,7 +59,7 @@ Route::view('/admin/business/create', 'admin.business.create-edit-form', [
     'action' => 'Ajouter un établissement',
     'edit' => false
     ])
-->middleware('auth')->middleware('admin');
+->middleware('auth')->middleware('admin')->name('admin-create');
 
 // send post request to add new business to DB
 Route::post('/admin/business/create', [AdminController::class, 'createBusiness'])

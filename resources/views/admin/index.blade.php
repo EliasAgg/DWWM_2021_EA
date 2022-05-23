@@ -10,53 +10,53 @@
             <div class="w-full ">
                 <table class="w-full">
                     <thead>
-                        <tr
-                            class="text-md font-semibold text-white text-left  bg-gray-600 uppercase border-b border-gray-600">
-                            <th class="px-4 py-3">Lettre</th>
-                            <th class="px-4 py-3">Nom</th>
-                            <th class="px-4 py-3  hidden lg:table-cell">Ville</th>
-                            <th class="px-4 py-3  hidden lg:table-cell">Téléphone</th>
-                            <th class="px-4 py-3  hidden lg:table-cell">Catégorie</th>
-                            <th class="px-4 py-3">Actions</th>
-                        </tr>
+                    <tr
+                        class="text-md font-semibold text-white text-left  bg-gray-600 uppercase border-b border-gray-600">
+                        <th class="px-4 py-3">Lettre</th>
+                        <th class="px-4 py-3">Nom</th>
+                        <th class="px-4 py-3  hidden lg:table-cell">Ville</th>
+                        <th class="px-4 py-3  hidden lg:table-cell">Téléphone</th>
+                        <th class="px-4 py-3  hidden lg:table-cell">Catégorie</th>
+                        <th class="px-4 py-3">Actions</th>
+                    </tr>
                     </thead>
                     <tbody class="bg-white">
-                        @foreach ($businesses as $business)
-                            <tr class="text-gray-700">
-                                <td class="px-4 py-3 border">
-                                    <div class="flex items-center">
-                                        <div>
-                                            <p class="font-semibold text-lg text-white bg-gray-600 px-2 rounded-md">
-                                                {{ $business->glyph }}</p>
-                                            {{-- <p class="text-xs text-gray-600">Developer</p> --}}
-                                        </div>
+                    @foreach ($businesses as $business)
+                        <tr class="text-gray-700">
+                            <td class="px-4 py-3 border">
+                                <div class="flex items-center">
+                                    <div>
+                                        <p class="font-semibold text-lg text-white bg-gray-600 px-2 rounded-md">
+                                            {{ $business->glyph }}</p>
+                                        {{-- <p class="text-xs text-gray-600">Developer</p> --}}
                                     </div>
-                                </td>
-                                <td class="px-4 py-3 text-ms border">{{ $business->name }}</td>
-                                <td class="px-4 py-3 border  hidden lg:table-cell">
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-ms border">{{ $business->name }}</td>
+                            <td class="px-4 py-3 border  hidden lg:table-cell">
                                     <span class="px-2 py-1 rounded-sm ">
                                         {{ $business->city }} </span>
-                                </td>
-                                <td class="px-4 py-3 text-sm border  hidden lg:table-cell">{{ $business->phone }}</td>
-                                <td class="px-4 py-3 text-sm border  hidden lg:table-cell">
-                                    <x-category-icon :id="$business->main_category_id" />
-                                    {{ $business->MainCategory->name }}
-                                </td>
-                                <td class="px-4 py-3 text-sm border">
-                                    <div class="flex justify-between sm:justify-around">
-                                        <a href="/admin/business/edit/{{ $business->id }}">
-                                            <i class="far fa-edit text-yellow-500 text-2xl sm:text-base"></i>
-                                        </a>
-                                        {{-- <a href="/admin/business/destroy/{{ $business->id }}"><i
-                                                class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i></a> --}}
-                                        <a href="/admin/business/{{ $business->id }}">
-                                            <i class="fas fa-eye text-blue-400 text-2xl sm:text-base"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            </td>
+                            <td class="px-4 py-3 text-sm border  hidden lg:table-cell">{{ $business->phone }}</td>
+                            <td class="px-4 py-3 text-sm border  hidden lg:table-cell">
+                                <x-category-icon :id="$business->main_category_id"></x-category-icon>
+                                {{ $business->MainCategory->name }}
+                            </td>
+                            <td class="px-4 py-3 text-sm border">
+                                <div class="flex justify-between sm:justify-around">
+                                    <a href="/admin/business/edit/{{ $business->id }}">
+                                        <i class="far fa-edit text-yellow-500 text-2xl sm:text-base"></i>
+                                    </a>
+                                    {{-- <a href="/admin/business/destroy/{{ $business->id }}"><i
+                                            class="fas fa-trash-alt text-red-500 text-2xl sm:text-base"></i></a> --}}
+                                    <a href="/admin/business/{{ $business->id }}">
+                                        <i class="fas fa-eye text-blue-400 text-2xl sm:text-base"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
 
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
 
@@ -65,8 +65,8 @@
                         {{ $businesses->links() }}
                         <div class=" flex justify-center sm:justify-end">
 
-                            <a href="/admin/business/create"
-                                class="p-2 border border-gray-700 mt-3 sm:mt-0 mb-3 mr-3 hover:bg-green-400 rounded-lg"><i
+                            <a href="{{ route('admin-create') }}"
+                               class="p-2 border border-gray-700 mt-3 sm:mt-0 mb-3 mr-3 hover:bg-green-400 rounded-lg"><i
                                     class="fas fa-plus"></i> Ajouter</a>
                         </div>
                     </div>

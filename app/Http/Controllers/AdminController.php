@@ -46,7 +46,6 @@ class AdminController extends Controller
                 'activity' => $validated['activity'],
                 'description' => $validated['description'],
                 'link' => $validated['link'],
-                'address' => $validated['address'],
                 'phone' => $validated['phone'],
                 'contact' => $validated['contact'],
                 'schedule' => $validated['schedule'],
@@ -70,7 +69,7 @@ class AdminController extends Controller
      */
     public function validatorBusiness(Request $request): array
     {
-        $validated = $request->validate([
+        return $request->validate([
             'glyph' => ['required', 'bail', 'alpha'],
             'name' => ['required', 'bail'],
             'main_category_id' => ['required', 'bail'],
@@ -80,15 +79,12 @@ class AdminController extends Controller
             'activity' => ['nullable'],
             'description' => ['nullable'],
             'link' => ['starts_with:www.', 'nullable'],
-            'address' => ['nullable'],
             'contact' => ['nullable'],
             'schedule' => ['nullable'],
             'address' => ['nullable'],
             'zipcode' => ['nullable', 'digits:5'],
             'city' => ['nullable']
         ]);
-
-        return $validated;
     }
 
     /**
